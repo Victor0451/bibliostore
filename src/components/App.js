@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import store from '../store';
+import { Provider } from 'react-redux';
+
 import Suscriptores from "./suscriptores/Suscriptores";
 import MostrarSuscriptor from "./suscriptores/MostrarSuscriptor";
 import NuevoSuscriptor from "./suscriptores/NuevoSuscriptor";
@@ -8,7 +11,7 @@ import Navbar from "../components/layout/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <BrowserRouter>
         <Navbar />
 
@@ -22,7 +25,7 @@ function App() {
         </div>
 
       </BrowserRouter>
-    </div>
+    </Provider>
   );
 }
 
